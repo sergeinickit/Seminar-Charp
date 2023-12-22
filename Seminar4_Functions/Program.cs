@@ -202,45 +202,78 @@
 // Тоже спомощью функции:
 
 
- System.Console.WriteLine("Введите размер массива");        
-int num = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[num];                       
+//  System.Console.WriteLine("Введите размер массива");        
+// int num = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[num];                       
 
-CreateArray();  
+// CreateArray();  
 
- int[] CreateArray()     
-{
-   for (int i = 0; i < array.Length; i++)    
-     {
-         array[i] = new Random().Next(10, 101);
-         System.Console.WriteLine(array[i] + " ");     
-     }
-     return array; 
-}
+//  int[] CreateArray()     
+// {
+//    for (int i = 0; i < array.Length; i++)    
+//      {
+//          array[i] = new Random().Next(10, 101);
+//          System.Console.WriteLine(array[i] + " ");     
+//      }
+//      return array; 
+// }
 
-FindPrimeNumbers();       // Перводится как - "найти прстое число"
-void FindPrimeNumbers()
-{
-  int countNumber = 0;           
+// FindPrimeNumbers();       // Перводится как - "найти прстое число"
+// void FindPrimeNumbers()
+// {
+//   int countNumber = 0;           
 
-   for (int i = 0; i < array.Length; i++)
-   {
-    bool isFind = false;           //Создаем bool переменную, которая будет служить индикаторм - подходит нам число в проверке или нет
+//    for (int i = 0; i < array.Length; i++)
+//    {
+//     bool isFind = false;           //Создаем bool переменную, которая будет служить индикаторм - подходит нам число в проверке или нет
 
-    for (int j = 2; j < array[i]; j++)      //Начинаем деление с "2", поэтому "2" вместо "0". Делим до тех пор, пока не дойдем до "самого себя"(array[])
-    {
-        if(array[i] % j == 0)
-        {
-            isFind = true;           //Если какое-то число делится без остатка - значит оно нам не подходит, и переменную меняем на true
-        }
-    }
+//     for (int j = 2; j < array[i]; j++)      //Начинаем деление с "2", поэтому "2" вместо "0". Делим до тех пор, пока не дойдем до "самого себя"(array[])
+//     {
+//         if(array[i] % j == 0)
+//         {
+//             isFind = true;           //Если какое-то число делится без остатка - значит оно нам не подходит, и переменную меняем на true
+//         }
+//     }
     
-    if(isFind == false)            //Делаем проверку - если bool число не изменилось
-    {
-        countNumber = countNumber + 1;     //Если число подходит, увеличиваем счетчик на "1"
-    }
-   }
-   System.Console.WriteLine();
-   System.Console.WriteLine(countNumber);
-}
+//     if(isFind == false)            //Делаем проверку - если bool число не изменилось
+//     {
+//         countNumber = countNumber + 1;     //Если число подходит, увеличиваем счетчик на "1"
+//     }
+//    }
+//    System.Console.WriteLine();
+//    System.Console.WriteLine(countNumber);
+// }
 
+
+// Разбор задачи 4 домашнего задания от Seminar3_Array
+
+// Задача 4**(не обязательно): Дано натуральное число в диапазоне от 1 до 100 000. Создайте массив, состоящий из цифр этого числа.
+//  Старший разряд числа должен располагаться на 0-м индексе массива, младший – на последнем. Размер массива должен быть равен количеству цифр.
+// Примеры:
+// 425 => [4 2 5]
+// 8741 => [8 7 4 1]
+// 4 => [4]
+
+// System.Console.WriteLine("Введите число");       
+// int num = Convert.ToInt32(Console.ReadLine()); 
+// // Как только получили число от пользователя, создаем переменную count, которая после цикла нам скажет - сколько символов в нашем числе
+// int copyNum = num;       // Делаем копию num, т.к. после цикла num ,будет нужен
+// int count = 0;
+
+// while(num > 0)
+// {
+//     num = num /10;
+//     count++;
+// }
+// int[] array = new int[count];    // Делаем массив и заполняем
+
+// for (int i = array.Length-1; i >= 0; i--)    // Идем по массиву в обратном порядке(от последнего к первому), чтобы выводилось правильно
+// {
+//     array[i] = copyNum %10;
+//     copyNum = copyNum /10;    
+// }
+
+// for (int i = 0; i < array.Length; i++)     // Создаум еще цикл для корректного вывода на консоль
+// {
+//     System.Console.Write(array[i] + " "); 
+// }
